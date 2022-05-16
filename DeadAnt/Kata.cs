@@ -9,4 +9,9 @@ public class Kata
 		ants = ants.Replace("ant", "");
 		return Math.Max(ants.Count(x=> x=='a'), Math.Max(ants.Count(x=> x=='n'),ants.Count(x=> x=='t')));
 	}
+	
+	public static int DeadAntCountOneLane(string? ants)
+	{
+		return ants == null ? 0 : "ant".Select(c => ants.Replace("ant", "").Count(l => l == c)).Max();
+	}
 }
