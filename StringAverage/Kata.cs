@@ -3,6 +3,11 @@
 public class Kata
 {
 	public string StringAverage(string str) {
-		return "";
+		var nums = str.Split(" ");
+		if (nums.Length==0 || nums.Any(num => !Enum.IsDefined(typeof(NumStringEnum),num))) {
+			return "n/a";
+		}
+		var sum = nums.Average(num => (int) Enum.Parse<NumStringEnum>(num));
+		return ((NumStringEnum) sum).ToString();
 	}
 }
