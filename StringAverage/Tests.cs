@@ -15,7 +15,7 @@ public class Tests
 	[TestCase("one one eight one","two")]
 	[TestCase("","n/a")]
 	public void TestEnum(string input,string expect) {
-		Assert.That(new Kata().StringAverageWithEnum(input), Is.EqualTo(expect));
+		Assert.That(Kata.StringAverageWithEnum(input), Is.EqualTo(expect));
 	}
 	[Test]
 	[TestCase("zero nine five two","four")]
@@ -26,6 +26,6 @@ public class Tests
 	[TestCase("one one eight one","two")]
 	[TestCase("","n/a")]
 	public void TestArray(string input,string expect) {
-		Assert.That(new Kata().StringAverageWithArray(input), Is.EqualTo(expect));
+		Assert.That(Kata.StringAverageWithArray(input), Is.EqualTo(expect));
 	}
 }

@@ -2,7 +2,7 @@
 
 public class Kata
 {
-	public string StringAverageWithEnum(string str) {
+	public static string StringAverageWithEnum(string str) {
 		var nums = str.Split();
 		if (nums.Length==0 || nums.Any(num => !Enum.IsDefined(typeof(NumStringEnum),num))) {
 			return "n/a";
@@ -10,7 +10,7 @@ public class Kata
 		var sum = nums.Average(num => (int) Enum.Parse<NumStringEnum>(num));
 		return ((NumStringEnum) sum).ToString();
 	}
-	public string StringAverageWithArray(string str) {
+	public static string StringAverageWithArray(string str) {
 		var numString = new[] {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 		var nums = str.Split();
 		if (nums.Length==0 || !nums.All(numString.Contains)) {
